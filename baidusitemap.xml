@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    
+  <url>
+    <loc>http://iholy.me/2015/02/14/%E7%94%9F%E6%B4%BB%E5%B0%B1%E6%98%AF%E8%87%AA%E5%BE%97%E5%85%B6%E4%B9%90/</loc>
+    <lastmod>2015-02-15T08:33:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>生活就是自得其乐</title>
+        <pubTime>2015-02-14T14:10:20.000Z</pubTime>
+        
+        <tag>Life </tag>
+         
+         <content><![CDATA[<p>&emsp;</p>
+<hr>
+<p>&emsp;&emsp;介绍一套放肆又粗俗的食物套餐，来满足人类基因中对高热量食物的癖好。<br><a id="more"></a><br>&emsp;&emsp;首先，找一个即有麦当劳，又有肯德基的地方。</p>
+<p>&emsp;&emsp;之后，先去肯德基，点一杯现磨卡布，嗯，对于这种咖啡，我们只能称之为卡布。<br>&emsp;&emsp;而不能称之为卡布奇诺（记得要一根细管）。</p>
+<p>&emsp;&emsp;然后，迅速的端着那杯卡布，进入麦当劳，点两枚麦香鸡，记得再多要两袋番茄酱。</p>
+<p>&emsp;&emsp;再后，找一个舒适的座位，把番茄酱挤入麦香鸡没有沙拉酱的一面，慢慢的，吃完这俩货。</p>
+<p>&emsp;&emsp;再再后，用细管慢慢的喝完那杯卡布。</p>
+<p>&emsp;&emsp;最后，放一个地动山摇的屁，走人。</p>
+<p>&emsp;&emsp;整个过程中，不要看手机，不要想太多事。</p>
+<p>&emsp;&emsp;好了，我的嘱咐就到这里了。</p>
+<p>&emsp;&emsp;不要推敲我的文字，文字就如同生活一样，禁不起推敲。</p>
+<p>&emsp;&emsp;生活，就是自得其乐，希望你知道，我在写什么。<br>&emsp;&emsp;（完）</p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="80%" url="http://iholy.me/categories/80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iholy.me/2015/01/27/%E5%85%B3%E4%BA%8EAndroid%E8%B0%83%E8%AF%95%E6%A1%A5-ADB-%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/</loc>
+    <lastmod>2015-02-15T05:39:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于Android调试桥(ADB)端口占用</title>
+        <pubTime>2015-01-27T14:10:20.000Z</pubTime>
+        
+        <tag>Android </tag>
+         
+        <tag>调试 </tag>
+         
+         <content><![CDATA[<p>&emsp;</p>
+<hr>
+<p>&emsp;&emsp;有时遇到Android调试桥<code>ADB</code>端口被占用的情况，应如何处理呢？</p>
+<h3 id="【思路1_】利用命令行查看端口被占用原因。">【思路1 】利用命令行查看端口被占用原因。</h3>
+<a id="more"></a>
+<p>&emsp;&emsp;<code>netstat -aon | findstr &quot;5037&quot;</code></p>
+<blockquote>
+<p>-a 显示所有连接和侦听端口。<br>-o 显示拥有的与每个连接关联的进程 ID。<br>-n 以数字形式显示地址和端口号。<br>findstr 寻找字符串。</p>
+</blockquote>
+<p>&emsp;&emsp;之后，杀掉 PID 对应进程。（最后一列为PID）<br>&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-27-ADB-Port-netstat.png" alt=""></p>
+<blockquote>
+<p>几种方法：<br>&emsp;&emsp;A:<br>&emsp;&emsp;&emsp;&emsp;用进程管理器杀（记得打开PID列）<br>&emsp;&emsp;&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-27-ADB-Port-PID.png" alt=""><br>&emsp;&emsp;B:<br>&emsp;&emsp;&emsp;&emsp;命令行: <code>taskkill 【PID】-t -f</code><br>&emsp;&emsp;C:<br>&emsp;&emsp;&emsp;&emsp;命令行: <code>TASKLIST | findstr &quot;【PID】&quot;</code><br>&emsp;&emsp;&emsp;&emsp;命令行: <code>wmic process where name=&quot;【进程名称】&quot; call terminate</code></p>
+</blockquote>
+<h3 id="【思路2】_更改“ADB”所需要占用的端口。">【思路2】 更改“<code>ADB</code>”所需要占用的端口。</h3>
+<blockquote>
+<p>&emsp;&emsp;A/ 添加环境变量<br>&emsp;&emsp;&gt;&emsp;&emsp;名称：<code>ANDROID_ADB_SERVER_PORT</code><br>&emsp;&emsp;&gt;&emsp;&emsp;值：【所需端口号】<br>&emsp;&emsp;B/ 修改注册表<br>&emsp;&emsp;&emsp; 位置：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment</code><br>&emsp;&emsp;&emsp; 增加字段：<code>ANDROID_ADB_SERVER_PORT</code><br>&emsp;&emsp;&emsp; 类型：<code>REG_SZ</code><br>&emsp;&emsp;&emsp; 值：【所需端口号】</p>
+<p>&emsp;&emsp;<code>　A == B　</code></p>
+</blockquote>
+<p>&emsp;&emsp;一般情况下，都是由第三方Android工具占用了端口，如Android手机PC端管理工具，刷机工具等。还有一些比较特殊的情况，如果安装了管家类产品，例如腾讯家的，子进程将被驱动保护，需要手动关闭其自我保护后才可关闭，或使用ARK工具强制关闭该进程。<br>&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-27-ADB-Port-tadb.png" alt=""><br>&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-27-ADB-Port-diannaoguanjia.png" alt=""></p>
+<blockquote>
+<p>另：</p>
+<blockquote>
+<p><code>adb kill-server</code><br><code>adb start-server</code></p>
+</blockquote>
+<p>可利用以上两句命令重启一下ADB</p>
+</blockquote>
+<p>P.S 还可以通过修改对应进程权限限制其启动：<br>&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-27-ADB-Port-TADB-Permisstion.png" alt=""></p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="80%" url="http://iholy.me/categories/80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://iholy.me/2015/02/09/%E5%88%9D%E8%A7%81-LBE%E5%AE%89%E5%85%A8%E5%A4%A7%E5%B8%88%E3%80%90%E7%BA%AF%E5%87%80%E7%89%88%E3%80%91/</loc>
+    <lastmod>2015-02-10T06:11:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>初见 LBE安全大师【纯净版】</title>
+        <pubTime>2015-02-09T08:16:16.000Z</pubTime>
+        
+        <tag>Android </tag>
+         
+        <tag>LBE安全大师 </tag>
+         
+         <content><![CDATA[<p>&emsp;</p>
+<hr>
+<p>&emsp;&emsp;<strong>LBE</strong>做为国内少有的、有态度的移动安全厂商，一直秉承着认真做事，不浮夸，不作恶的态度在做安全，为提升中国移动安全整体水平贡献力量，一直让我们非常钦佩与关注。在国内浮躁的安全行业，能出现一个如此沉稳，低调，内敛，实干的厂商，实属不易。</p>
+<p>&emsp;&emsp;2015年1月初，我们在测试过最新版的LBE后，感觉以下几点急需改观：</p>
+<blockquote>
+<p>&emsp;一、用户体验复杂，臃肿。<br>&emsp;二、UI及交互值得大幅优化。<br>&emsp;三、虽然有软件升级提醒，但并未开放“安全市场”功能。<br>&emsp;（可以预见，此时已经在做“安全市场”了，要知道这对于提升用户体验及系统整体安全性，以及最后的流量变现都是非常重要的一步）</p>
+</blockquote>
+<p>&emsp;&emsp;果不其然，2015年2月初，LBE发布了<strong>【LBE安全大师纯净版】</strong>，纯净主要体现在用户界面上，UI变得很美观，越来越符合 Android Material Design 的设计规范，低调奢华扁又平，另外我们从侧面了解到，LBE的沙箱功能，360已经在其极客版进行了Copycat，这次LBE的升级，相信是非常有必要且非常有效的一次改动，符合用户及市场竞争需求。<br><a id="more"></a><br>&emsp;&emsp;但这次的UI，让我们也发现一些槽点，例如下图中标记处（黄绿色箭头所指），总觉得不舒服，好像菜单栏没显示全，且整体低了几像素，难道是设计师故意而为？让用户看到就有想摸的冲动？或许是适配的问题吧，Nexus 5，Android 5.0。<br>&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-1-San_Dao_Gang.png" alt="主界面三道杠"></p>
+<p>下面我们用 360手机卫士 &amp; 极客版 与 <strong>LBE安全大师 &amp; 纯净版</strong> 做一些简单的安装包体积对比：</p>
+<table>
+<thead>
+<tr>
+<th>　</th>
+<th style="text-align:center">大小(MB)</th>
+<th style="text-align:center">版本号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LBE安全大师纯净版</td>
+<td style="text-align:center">7.71</td>
+<td style="text-align:center">6.0.9020</td>
+</tr>
+<tr>
+<td>LBE安全大师</td>
+<td style="text-align:center">7.44</td>
+<td style="text-align:center">5.4.8358</td>
+</tr>
+<tr>
+<td>360手机卫士</td>
+<td style="text-align:center">15.8</td>
+<td style="text-align:center">5.4.5.1041</td>
+</tr>
+<tr>
+<td>360手机卫士极客版</td>
+<td style="text-align:center">6.44</td>
+<td style="text-align:center">1.4.7.1001</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;&emsp;其实从安装包体积上可以看出，LBE一直采取模块化设计，某些不常用的模块可以按需安装，所以并没有显著的瘦身，而360手机安全卫士极客版，应是其官方已经无法忍受硕大的安装包而迫切推出的一个轻量版本，可能是投石问路之举。</p>
+<p><strong>LBE新功能列表</strong></p>
+<blockquote>
+<p>【全新】界面纯净风格，酷炫时尚更好用<br>【全新】垃圾清理，扫描更彻底，清理更放心<br>【全新】桌面悬浮窗控制中心，启动更快捷<br>【新增】安全指数，区分软件安全等级<br>【新增】安全沙箱中软件支持升级<br>【新增】软件安装器，配置软件权限快人一步</p>
+</blockquote>
+<p><strong>软件安装器，在安装时同步设置权限，相比于之前的软件权限配置，要方便许多。（见黄绿色框）</strong><br>&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-1-Ruan_Jian_An_Zhuang_Qi_1.png" alt="">&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-1-Ruan_Jian_An_Zhuang_Qi_2.png" alt=""></p>
+<p><strong>更美观的悬浮窗控制中心与一键清理。</strong><br>&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-1-Xuan_Fu_Chuang_Kong_Zhi_Zhong_Xin.png" alt="">&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-1-Yi_Jian_Qing_Li.png" alt=""></p>
+<p><strong>关于安全市场的一些想法</strong><br>&emsp;&emsp;目前可以猜测到LBE肯定会有一个后台抓取全网APP并自动分析的平台，这个平台应可利用传统HIPS的概念，对APP进行自动打分，通过行为序列“规则”组，判断是否为恶意程序，甚至后期可以开发出用户端的工具，为用户手机提供更高粒度的“体检”。<br>&emsp;&emsp;而且，目前LBE的安全市场并未提示用户下载的APP是否为“官方版”。<br>&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-1-an_quan_shi_chang.png" alt="安全市场提示"></p>
+<h3 id="下一步"><strong>下一步</strong></h3>
+<p>下一步该做些什么呢？做为局外人，我们给出一些浮浅的看法：<br>产品及技术层面：</p>
+<blockquote>
+<ul>
+<li>继续进化 UI 与 交互，包括安全市场的体验 (例如：市场中提示一下是否为官方版APP)。</li>
+<li>增加休眠功能。（类似“绿色守护”）</li>
+<li>安全市场快捷方式</li>
+<li>PC端管理软件？</li>
+<li>屏蔽更多广告接口？</li>
+<li>滑动操作代替三道杠？</li>
+<li>…</li>
+</ul>
+</blockquote>
+<p>市场方面：</p>
+<blockquote>
+<ul>
+<li>随 Android 5.0 安全性的提高，免ROOT的功能受限，需要更多的底层合作，进而也实现了推广。</li>
+<li>进一步实现流量变现。</li>
+<li>尝试撰写一些PR稿，例如描述一下如何帮助用户、防御哪些攻击，最近Android平台又出现了哪些安全问题等。</li>
+</ul>
+</blockquote>
+<p>在撰写此文的过程中，还发现了修改版的LBE，号称去广告、去安全市场修改版，主要修改点如下：</p>
+<blockquote>
+<ul>
+<li>桌面悬浮窗默认不显示</li>
+<li>软件升级通知栏提醒默认关闭</li>
+<li>禁用安全市场</li>
+<li>禁止卸载时弹出调查页</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;其实我们认为作为一款完全“不作恶”且“免费”的安全软件，完全没有必要进行这类改动，使用这类修改版的用户，很可能由于这些“所谓”的修改，进而用上“不安全”的“安全软件”，正所谓：<strong>“天知道他们除此之外，还改了些什么！！”</strong>，另一方面，安全市场，绝对是一个“双赢（Win-Win）”的产品，有利于广大用户。</p>
+<p>&emsp;&emsp;稍后 iholy.me 将发布一篇关于 <strong>“我们为什么需要安全市场”</strong>的文章。敬请期待。当然，另一方面，LBE也应考虑：“为什么会有这样的修改版本？市场需求在哪里？需要修改些什么吗？”</p>
+<p>&emsp;&emsp;再之后，我们还会发布一些LBE偏底层的技术分析。<br>&emsp;&emsp;最后附上一张2015年1月初对LBE公开资料进行分析时画的思维导图：<br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-09-LBE-LBE.png" alt="思维导图"></p>
+<blockquote>
+<p><code>iholy.me版权所有</code><br><code>转载请注明出处</code><br><code><a href="mailto:15〇〇@iholy.me" target="_blank" rel="external"> 15〇〇@iholy.me </a></code><br><code>发送邮件请将“15〇〇”替换为<font color="#FE9A2E">“1500”</font></code></p>
+</blockquote>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="80%" url="http://iholy.me/categories/80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iholy.me/2015/01/12/Eclipse-Version-Update/</loc>
+    <lastmod>2015-02-10T06:08:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>Eclipse跨版本升级（大版本升级）</title>
+        <pubTime>2015-01-12T10:48:53.000Z</pubTime>
+        
+        <tag>Android </tag>
+         
+         <content><![CDATA[<p>&emsp;</p>
+<hr>
+<p>&emsp;&emsp;在2011年下半年的时候，由于某些机缘巧合，致使我初次接触了<font color="#FE9A2E">&quot;Eclipse+ADT&quot;</font>进行 Android 的相关学习与研究，当时还没有 Android Studio，那时候 Android 集成开发环境也只有用&quot;Eclipse+ADT&quot;，之后，那是我第一次用 Eclipse，之前一直在做的工作是PC平台反病毒的研究与MFC程序的编写，IDE也只是 Visual Studio 用的多，更如井底之蛙一般的还对 Java 抱有一丝抵触情绪。<br>&emsp;&emsp;Eclipse 可以通过增加各类插件来支持不同种类的开发工作，例如 Pydev 用来做 Python 开发，ADT 用来做 Android 开发，等等。<br>&emsp;&emsp;Eclipse 的自动升级功能，一般只会在相应的大版本下进行小版本更新，如果希望用上最新版本的 Eclipse ，也就是进行大版本更新，我们应该怎么办做呢？</p>
+<p>难道..要重新下载新版，再重新安装一遍全部插件吗？<br><strong><br><font color="blue">如果你遇到了类似问题，请按下面步骤试试：</font></strong><br><a id="more"></a><br><strong>1、打开 Menu -&gt; Help -&gt; Install New Software…</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-1.png" alt="">  </p>
+<p><strong>2、打开&quot;Available Software Sites&quot;，会发现有一条当前版本的升级检测地址，</strong><br><strong>&ensp;&emsp;例如目前我电脑中的版本为&quot;Juno&quot;(v4.2)，对应地址为&quot;<a href="">http://download.eclipse.org/releases/juno</a>&quot;</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-2.png" alt=""></p>
+<p><strong>3、现在我们打开&quot;<a href="">https://eclipse.org/downloads</a>&quot;</strong><br><strong>&ensp;&emsp;看一下&quot;Eclipse&quot;的最新版本：为&quot;Luna&quot;(v4.4.1)(2015年1月12日数据)</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-32.png" alt=""></p>
+<p><strong>4、点击&quot;Add…&quot;按钮，添加一条:</strong><br>&ensp;&emsp;&quot;Name：Luna&quot;<br>&ensp;&emsp;&quot;Location：<a href="">http://download.eclipse.org/releases/luna</a>&quot;<br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-3.png" alt=""></p>
+<blockquote>
+<p><strong><font color="blue">Tips:</font></strong><br>&emsp;&emsp;只需修改Location为形如:&quot;<code>http://download.eclipse.org/releases/[LastVersionName]</code>&quot;即可。<br>&emsp;&emsp; (即替换 [LastVersionName] 为所需升级的大版本名)</p>
+</blockquote>
+<p><strong>5、之后，我们打开 Menu -&gt; Help -&gt; Check for Updates，</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-42.png" alt=""></p>
+<p><strong>6、经过检测后，可以看到，找到了4.4.1的版本更新。</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-4.png" alt=""></p>
+<p><strong>7、更新后，经测试一切正常。</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-5.png" alt=""></p>
+<p><strong>恭喜，你学会了Eclipse大版本更新。（全文完）</strong></p>
+<blockquote>
+<p><code>iholy.me版权所有</code><br><code>转载请注明出处</code><br><code><a href="mailto:15〇〇@iholy.me" target="_blank" rel="external"> 15〇〇@iholy.me </a></code><br><code>发送邮件请将“15〇〇”替换为<font color="#FE9A2E">“1500”</font></code></p>
+</blockquote>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="80%" url="http://iholy.me/categories/80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://iholy.me/2015/01/13/UPDATE-RECORD/</loc>
+    <lastmod>2015-02-10T01:45:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>UPDATE RECORD</title>
+        <pubTime>2015-01-13T09:50:41.000Z</pubTime>
+        
+        <tag>Hexo </tag>
+         
+         <content><![CDATA[<p>&emsp;</p>
+<hr>
+<h3 id="优化列表（ToDo-List）">优化列表（ToDo-List）</h3>
+<ul>
+<li>优化字体（雅黑）（2015-01-12）（Keywords：<code>Hexo 字体</code>）</li>
+<li>增加评论模块（多说）（2015-01-13）（Keywords：<code>Hexo 多说</code>）</li>
+<li>Block Googleapis For Chinese Network Environments（Fonts）（2015-01-13）（Keywords：<code>Hexo Googleapis font</code>）</li>
+<li>Warning: LF will be replaced by CRLF（2015-01-13）<a id="more"></a>（Keywords：<code>Hexo LF CRLF</code>）</li>
+<li>修复评论模块出现在首页的问题（2015-01-13）（Keywords：<code>Hexo 评论 首页</code>）</li>
+<li>Add Next.page and Prev.page（2015-01-14）（Keywords：<code>Hexo prev_next.ejs</code>）</li>
+<li>favicon（2015-01-14）（Keywords：<code>Hexo favicon</code>）</li>
+<li>统计（But adblock plugin will block it）（2015-01-14）</li>
+<li>RSS（2015-01-14）</li>
+<li>CSS for CODE（2015-01-14）</li>
+<li>Fix Table CSS （2015-02-09）</li>
+<li>Sitemap for baidu.com<br><br><blockquote>
+<p>&emsp;&emsp;<strong>Tips</strong><br>&emsp;&emsp;&emsp;&emsp;搜索关键字可得到大量解决类似问题的文章。  </p>
+</blockquote>
+</li>
+</ul>
+<h5 id="【Updated_@_2015_01_14_:_5_p-m-_】">【Updated @ 2015_01_14 : 5 p.m. 】</h5>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="20%" url="http://iholy.me/categories/20/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>

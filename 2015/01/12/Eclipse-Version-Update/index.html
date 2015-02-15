@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Eclipse跨版本升级（大版本升级） | HolyDays</title>
+  <meta name="author" content="Holy">
+  
+  <meta name="description" content="Mobile Security Researcher, Android player, A native of Beijing, China.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Eclipse跨版本升级（大版本升级）"/>
+  <meta property="og:site_name" content="HolyDays"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="HolyDays" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script src="/js/html5.js"></script>
+  <!--[ByHoly150113]   
+   -->
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d94b90994f5ff379e53936fe32d6c06b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">HolyDays</a></h1>
+  <h2><a href="/">玩eR既工作·工作既人生·人生既玩eR</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-12T10:48:53.000Z"><a href="/2015/01/12/Eclipse-Version-Update/">1月 12 2015</a></time>
+      
+      
+  
+    <h1 class="title">Eclipse跨版本升级（大版本升级）</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>&emsp;</p>
+<hr>
+<p>&emsp;&emsp;在2011年下半年的时候，由于某些机缘巧合，致使我初次接触了<font color="#FE9A2E">&quot;Eclipse+ADT&quot;</font>进行 Android 的相关学习与研究，当时还没有 Android Studio，那时候 Android 集成开发环境也只有用&quot;Eclipse+ADT&quot;，之后，那是我第一次用 Eclipse，之前一直在做的工作是PC平台反病毒的研究与MFC程序的编写，IDE也只是 Visual Studio 用的多，更如井底之蛙一般的还对 Java 抱有一丝抵触情绪。<br>&emsp;&emsp;Eclipse 可以通过增加各类插件来支持不同种类的开发工作，例如 Pydev 用来做 Python 开发，ADT 用来做 Android 开发，等等。<br>&emsp;&emsp;Eclipse 的自动升级功能，一般只会在相应的大版本下进行小版本更新，如果希望用上最新版本的 Eclipse ，也就是进行大版本更新，我们应该怎么办做呢？</p>
+<p>难道..要重新下载新版，再重新安装一遍全部插件吗？<br><strong><br><font color="blue">如果你遇到了类似问题，请按下面步骤试试：</font></strong><br><a id="more"></a><br><strong>1、打开 Menu -&gt; Help -&gt; Install New Software…</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-1.png" alt="">  </p>
+<p><strong>2、打开&quot;Available Software Sites&quot;，会发现有一条当前版本的升级检测地址，</strong><br><strong>&ensp;&emsp;例如目前我电脑中的版本为&quot;Juno&quot;(v4.2)，对应地址为&quot;<a href="">http://download.eclipse.org/releases/juno</a>&quot;</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-2.png" alt=""></p>
+<p><strong>3、现在我们打开&quot;<a href="">https://eclipse.org/downloads</a>&quot;</strong><br><strong>&ensp;&emsp;看一下&quot;Eclipse&quot;的最新版本：为&quot;Luna&quot;(v4.4.1)(2015年1月12日数据)</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-32.png" alt=""></p>
+<p><strong>4、点击&quot;Add…&quot;按钮，添加一条:</strong><br>&ensp;&emsp;&quot;Name：Luna&quot;<br>&ensp;&emsp;&quot;Location：<a href="">http://download.eclipse.org/releases/luna</a>&quot;<br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-3.png" alt=""></p>
+<blockquote>
+<p><strong><font color="blue">Tips:</font></strong><br>&emsp;&emsp;只需修改Location为形如:&quot;<code>http://download.eclipse.org/releases/[LastVersionName]</code>&quot;即可。<br>&emsp;&emsp; (即替换 [LastVersionName] 为所需升级的大版本名)</p>
+</blockquote>
+<p><strong>5、之后，我们打开 Menu -&gt; Help -&gt; Check for Updates，</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-42.png" alt=""></p>
+<p><strong>6、经过检测后，可以看到，找到了4.4.1的版本更新。</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-4.png" alt=""></p>
+<p><strong>7、更新后，经测试一切正常。</strong><br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-12-Eclipse-Update-image-5.png" alt=""></p>
+<p><strong>恭喜，你学会了Eclipse大版本更新。（全文完）</strong></p>
+<blockquote>
+<p><code>iholy.me版权所有</code><br><code>转载请注明出处</code><br><code><a href="mailto:15〇〇@iholy.me" target="_blank" rel="external"> 15〇〇@iholy.me </a></code><br><code>发送邮件请将“15〇〇”替换为<font color="#FE9A2E">“1500”</font></code></p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/80/">80%</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Android/">Android</a>
+  </div>
+
+        <!-- 
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+ -->
+		<br>
+		
+<div class="prev_next clearfix">
+  
+    <a href="/2015/01/13/UPDATE-RECORD/" class="alignleft prev" title="UPDATE RECORD">上一篇: UPDATE RECORD</a>
+  
+  
+</div>
+
+      
+	  
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+    <section id="comment">
+        <!-- DuoShuo start -->
+        <div class="ds-thread" data-thread-key="2015/01/12/Eclipse-Version-Update/" data-title="Eclipse跨版本升级（大版本升级）"
+        data-url="http://iholy.me/2015/01/12/Eclipse-Version-Update/">
+        </div>
+        <!-- DuoShuo end -->
+        <!-- DuoShuo start (OnlyInsertOnePage) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {
+                short_name: "iholy"
+            }; (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:': 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- DuoShuo end -->
+    </section>
+    
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+	<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://znsv.baidu.com/customer_search/api/js?sid=6739692428947231043') + '&plate_url=' + (encodeURIComponent(window.location.href)) + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));
+	</script>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/20/">20%</a><small>1</small></li>
+  
+    <li><a href="/categories/80/">80%</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Android/">Android</a><small>3</small></li>
+  
+    <li><a href="/tags/Hexo/">Hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/LBE安全大师/">LBE安全大师</a><small>1</small></li>
+  
+    <li><a href="/tags/Life/">Life</a><small>1</small></li>
+  
+    <li><a href="/tags/调试/">调试</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Holy
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
