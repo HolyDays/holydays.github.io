@@ -4,7 +4,7 @@
   <subtitle><![CDATA[玩eR既工作·工作既人生·人生既玩eR]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://iholy.me/"/>
-  <updated>2015-02-15T10:24:02.736Z</updated>
+  <updated>2015-02-15T10:30:44.979Z</updated>
   <id>http://iholy.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://iholy.me/2015/02/14/%E7%94%9F%E6%B4%BB%E5%B0%B1%E6%98%AF%E8%87%AA%E5%BE%97%E5%85%B6%E4%B9%90/"/>
     <id>http://iholy.me/2015/02/14/生活就是自得其乐/</id>
     <published>2015-02-14T14:10:20.000Z</published>
-    <updated>2015-02-15T08:33:58.000Z</updated>
+    <updated>2015-02-15T10:30:18.000Z</updated>
     <content type="html"><![CDATA[<p>&emsp;</p>
 <hr>
 <p>&emsp;&emsp;介绍一套放肆又粗俗的食物套餐，来满足人类基因中对高热量食物的癖好。<br><a id="more"></a><br>&emsp;&emsp;首先，找一个即有麦当劳，又有肯德基的地方。</p>
@@ -32,6 +32,9 @@
 <p>&emsp;&emsp;好了，我的嘱咐就到这里了。</p>
 <p>&emsp;&emsp;不要推敲我的文字，文字就如同生活一样，禁不起推敲。</p>
 <p>&emsp;&emsp;生活，就是自得其乐，希望你知道，我在写什么。<br>&emsp;&emsp;（完）</p>
+<blockquote>
+<p><code>iholy.me版权所有</code><br><code>转载请注明出处</code><br><code><a href="mailto:15〇〇@iholy.me" target="_blank" rel="external"> 15〇〇@iholy.me </a></code><br><code>发送邮件请将“15〇〇”替换为<font color="#FE9A2E">“1500”</font></code></p>
+</blockquote>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>&emsp;</p>
@@ -162,7 +165,7 @@
     <link href="http://iholy.me/2015/01/27/%E5%85%B3%E4%BA%8EAndroid%E8%B0%83%E8%AF%95%E6%A1%A5-ADB-%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
     <id>http://iholy.me/2015/01/27/关于Android调试桥-ADB-端口占用/</id>
     <published>2015-01-27T14:10:20.000Z</published>
-    <updated>2015-02-15T05:39:06.000Z</updated>
+    <updated>2015-02-15T10:30:34.000Z</updated>
     <content type="html"><![CDATA[<p>&emsp;</p>
 <hr>
 <p>&emsp;&emsp;有时遇到Android调试桥<code>ADB</code>端口被占用的情况，应如何处理呢？</p>
@@ -190,6 +193,9 @@
 <p>可利用以上两句命令重启一下ADB</p>
 </blockquote>
 <p>P.S 还可以通过修改对应进程权限限制其启动：<br>&emsp;&emsp;<img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-01-27-ADB-Port-TADB-Permisstion.png" alt=""></p>
+<blockquote>
+<p><code>iholy.me版权所有</code><br><code>转载请注明出处</code><br><code><a href="mailto:15〇〇@iholy.me" target="_blank" rel="external"> 15〇〇@iholy.me </a></code><br><code>发送邮件请将“15〇〇”替换为<font color="#FE9A2E">“1500”</font></code></p>
+</blockquote>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>&emsp;</p>
