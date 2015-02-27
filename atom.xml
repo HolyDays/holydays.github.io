@@ -4,7 +4,7 @@
   <subtitle><![CDATA[玩eR既工作·工作既人生·人生既玩eR]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://iholy.me/"/>
-  <updated>2015-02-27T00:29:18.671Z</updated>
+  <updated>2015-02-27T05:58:11.551Z</updated>
   <id>http://iholy.me/</id>
   
   <author>
@@ -13,6 +13,51 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[为什么需要安全市场]]></title>
+    <link href="http://iholy.me/2015/02/27/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%AE%89%E5%85%A8%E5%B8%82%E5%9C%BA/"/>
+    <id>http://iholy.me/2015/02/27/为什么需要安全市场/</id>
+    <published>2015-02-27T05:48:36.000Z</published>
+    <updated>2015-02-27T05:57:36.000Z</updated>
+    <content type="html"><![CDATA[<p>&emsp;</p>
+<hr>
+<p>我们为什么需要安全市场？Android在中国为什么需要安全市场？<br>首先，GFW已经屏蔽了谷歌全部的服务，所以GooglePlay一般民众是无法使用到的。</p>
+<p>然后，基于这个原因，目前第三方市场渠道已达数百家，无论是官方的，重打包加广告的，写病毒的，做黑产的，都在利用此时的混乱向第三方市场发力。（还有某些论坛）</p>
+<p>随着一些第三方市场的良好运营，开始加入一些重打包识别过滤，病毒识别过滤，广告识别过滤，官方版白名单等细节，这就极大的提高了中国Android用户的手机安全短板。</p>
+<p>下面举个栗子，说明一下安全市场的意义：</p>
+<p>在2013年，我们做了一个Demo，修改国外输入法软件SwiftKey，加代码后重打包，通过Smali代码注入 输入法的两个关键函数，获取当前用户输入，无论是敲击的按键还是词或词组，都可以顺利获得，通过Http Post到一个服务器。</p>
+<p>简单说，就是重打包后获取了用户的全部输入。</p>
+<p>还可以增加很多功能，例如根据WiFi状态判断是否发送，不发送或发送失败就加密存到本地…</p>
+<p>下面上图：<br><img src="http://7u2ivo.com1.z0.glb.clouddn.com/Blog-2015-02-27-Third-Party-Market-2000.jpg" alt=""></p>
+<p>怎么应对？</p>
+<blockquote>
+<p>加自校验<br>加壳<br>守护进程<br>VM</p>
+</blockquote>
+<p>这就是为什么我们需要安全市场来杜绝第三方修改、病毒Apps，来保证用户用到的是官方原版。</p>
+<p>当然，安全是一件全局的事，Android框架层防住了，通过Linux底层还是有办法拿到键盘数据的，这就是另一个故事了。</p>
+<p>但如果Android不ROoT，乐趣就至少少一半。<br>安全市场，你怎么看？</p>
+<h1 id="再说点别的冷知识：">再说点别的冷知识：</h1>
+<p>突然想起一句话：</p>
+<h1 id="如果一开始，阿里没有去做手机系统，而是去直接发力APP，当前格局一定大不同。">如果一开始，阿里没有去做手机系统，而是去直接发力APP，当前格局一定大不同。</h1>
+<h1 id="还有一件事，去年某月，我们调查了一下”我叫MT”的辅助程序，叫Easy辅助，其实就是外挂，用LUA写的，重打包替换了原程序的文件，其实这个东西是加速了官方赚钱的步伐，所以官方基本没管，里面是否有更多的故事我们也没有继续深入调查，不过，一个月营业额，达到了四五十万，很可怕，很可怕。">还有一件事，去年某月，我们调查了一下”我叫MT”的辅助程序，叫Easy辅助，其实就是外挂，用LUA写的，重打包替换了原程序的文件，其实这个东西是加速了官方赚钱的步伐，所以官方基本没管，里面是否有更多的故事我们也没有继续深入调查，不过，一个月营业额，达到了四五十万，很可怕，很可怕。</h1>
+<p>最后，希望大家也不要乱刷机，做刷机包的也要吃饭，有良心的就放几个推广包，没良心的直接连着后门往里做。<br>不知道大家观察过没有，水货手机里为什么那么多软件？因为活一个厂家给10块钱！一般用户你删不掉！水货商要多赚你一些，放几个病毒都不过瘾。</p>
+<blockquote>
+<p><code>iholy.me版权所有</code><br><code>转载请注明出处</code><br><code><a href="mailto:15〇〇@iholy.me" target="_blank" rel="external"> 15〇〇@iholy.me </a></code><br><code>发送邮件请将“15〇〇”替换为<font color="#FE9A2E">“1500”</font></code></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>&emsp;</p>
+<hr>
+<p>我们为什么需要安全市场？Android在中国为什么需要安全市场？<br>首先，GFW已经屏蔽了谷歌全部的服务，所以GooglePlay一般民众是无法使用到的。</p>
+<p>然后，基于这个原因，目前第三方市场渠道已达数百家，无论是官方的]]>
+    </summary>
+    
+      <category term="Android" scheme="http://iholy.me/tags/Android/"/>
+    
+      <category term="80%" scheme="http://iholy.me/categories/80/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[【开脑洞】智能家居（二） ---老王的礼物]]></title>
